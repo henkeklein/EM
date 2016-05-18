@@ -10,36 +10,44 @@
 
 
 <!--formulär-->
-<h1> Create the best bikeevent ever <img src="https://cdn1.iconfinder.com/data/icons/travel-line-icons-vol-3/48/096-512.png" alt="Bike icon" height="40" width="40"></h1>
+<h1> Create new football event <img src="https://cdn1.iconfinder.com/data/icons/travel-line-icons-vol-3/48/096-512.png" alt="Bike icon" height="40" width="40"></h1>
 <div class="form-group">
   <form method="POST" action="/topic" class="small-12 columns medium-6">
-      <div class="col-sm-12">
-        <label>Event name</label>
-        <input type="text" class="form-control" placeholder="Add a short, clear name" name="title"/>
-      </div>
 
-      <div class="col-sm-12">
+      <div class="col-sm-6">
+      <label>Home team</label>
+      <input type="text" class="form-control" placeholder="Add hometeam" name="hometeam"/>
+    </div>
+<div class="col-sm-6">
+    <label>Away team</label>
+    <input type="text" class="form-control" placeholder="Add awayteam" name="awayteam"/>
+  </div>
+
+  <div class="col-sm-6">
+    <label>Location</label>
+    <input type="text" class="form-control" placeholder="Add location of game" name="location"/>
+  </div>
+
+      <div class="col-sm-6">
         <label>Image URL</label>
         <input type="text" class="form-control" placeholder="Add an image URL" name="image"/>
       </div>
 
-      <div class="col-sm-8">
+      <div class="col-sm-6">
         <label> Pick a date</label>
         <input type="text" class="form-control" name="datum" id="dp" onclick="$('#dp').datepicker();$('#dp').datepicker('show');" placeholder= "Choose Date">
       </div>
+
       <div class="col-sm-6">
-        <label>Start</label>
-        <input type="text" class="form-control" placeholder="Starting Address" name="start"/>
-      </div>
-      <div class="col-sm-6">
-        <label>Destination</label>
-        <input type="text" class="form-control" placeholder="Destination Address" name="end"/>
+        <label> Time on day</label>
+        <input type="text" class="form-control" placeholder="Enter time in 00:00" name="time"/>
       </div>
 
-      <div class="col-xs-12 col-sm-12">
-        <label>Description</label>
-        <textarea placeholder="Tell people more about the event" name="subject" class="form-control"></textarea>
+      <div class="col-sm-6">
+        <label> TV- Channel</label>
+        <input type="text" class="form-control" placeholder="Enter TV- channel" name="tv"/>
       </div>
+
       <div class="form-group">
 		      <div class=" col-xs-offset-3 col-xs-6 col-sm-offset-4 col-sm-6">
 			         <button type="submit" value="Create new event" id="submit" class="btn btn-success">Submit</button>

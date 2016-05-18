@@ -11,20 +11,15 @@
 
 {{# each title}}
 <section class="panel-group" >
-	<div class="panel panel-default col-md-7">
-<div id=""></div>
-      <p>
-        <a>{{this.[0].date}} {{this.[0].creator}}</a>
-       <img src = "{{this.[0].image}}" width="400" height="200"/>
-     </p>
-
-			<p><a href="/p/{{this.[0].key}}" role="button" class="btn btn-default">{{this.[0].title}} »</a>
-        <a href="/attend/{{this.[0].key}}" role="button" id="attend" class="btn btn-default">Attend »</a>
-        <a href="/unattend/{{this.[0].key}}" role="button" id="unattend" class="btn btn-default">Un Attend »</a>
-
-      </p>
-  </div><br>
-	<div class="panel panel-default col-md-7">
+    <p>
+      <h1> {{this.[0].hometeam}} - {{this.[0].awayteam}} </h1>
+     <img src = "{{this.[0].image}}" width="400" height="200"/><br>
+    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+    <label>{{this.[0].date}} Time {{this.[0].time}}</label><br>
+    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+    <label>Location: {{this.[0].location}}</label><br>
+    <label>TV-Channel: {{this.[0].tv}}</label><br>
+    </p>
 </section>
 {{/each}}
 

@@ -130,14 +130,6 @@ app.get('/signin', function(req, res){
   res.render('signin');
 });
 
-app.get('/info', function(req, res){
-  res.render('info', {user: req.user});
-});
-
-app.get('/contact', function(req, res){
-  res.render('contact', {user: req.user});
-});
-
 app.get('/post', function(req, res){
   res.render('post', {user: req.user});
 });
@@ -157,45 +149,25 @@ app.post('/login', passport.authenticate('local-signin', {
   })
 );
 app.get('/', events.getEvent);
-app.get('/p/:id', events.getTopic);
-app.get('/attend/:id', function(req, res){
-  var attendants;
-  db.newSearchBuilder()
-  .collection('Event')
-  .query(req.param("id"))
-  .then(function (events){
-    events.body.results.forEach(function(obj ,i){
-      attendants = events.body.results[i]["value"].attendants;
-      db.merge('Event', req.param("id"),{
-        'attendants': attendants + '  ' + fbName(req, res)
-      });
-    });
-
-  });
-  res.redirect('/');
-});
 
 app.post('/topic', function(req, res) {
-  var title = req.param("title"),
-    subject = req.param("subject"),
-    date = moment().format('MMMM Do YYYY, h:mm:ss a'),
-    datum =req.param("datum"),
-    start = req.param("start"),
-    end = req.param("end"),
-    creator = fbName(req, res),
-    attendants = fbName(req, res),
-    image = req.param("image")
+
+  var hometeam = req.param("hometeam"),
+      awayteam = req.param("awayteam"),
+      image = req.param("image"),
+      datum =req.param("datum"),
+      location= req.param("location"),
+      time = req.param("time"),
+      tv = req.param("tv")
 
   db.post('Event', {
-    "titles" : title,
-    "desc" : subject,
-    "date" : date,
+    "hometeam" : hometeam,
+    "awayteam" : awayteam,
+    "image" : image,
     "datum" : datum,
-    "start" : start,
-    "end" : end,
-    "creator": creator,
-    "attendants": attendants,
-    "image" : image
+    "location" : location,
+    "time": time,
+    "tv": tv,
 
   })
   .then(function (result) {
