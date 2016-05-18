@@ -1,0 +1,101 @@
+body{
+  background-color: #FCFCFC;
+  color: #000;
+}
+
+.container{
+  padding:0px;
+}
+
+#map-canvas{
+  height: 500px;
+
+}
+
+#time{
+
+}
+
+h1{
+text-align: center;
+padding-bottom: 0%;
+}
+
+.wrapper {
+	background-color: #DEDEDE;
+}
+
+
+.jumbotron {
+  background-image: url('middle.jpg');
+  background-size: cover;
+  text-shadow: 0.25px 0.25px 0.25px #000;
+  text-align: center;
+  padding-top: 5%;
+  border-radius: 0px !important;
+  min-height: 190px;
+}
+
+/*navigation*/
+.navbar-inverse .navbar-text, .navbar-inverse .navbar-nav>li>a{
+	 color: #fff;
+
+}
+.navbar {
+margin-bottom:0px;
+border-radius: 0px !important;
+background-color: #000;
+
+}
+
+/*formulär*/
+.form-group{
+  height: 230px;
+  width: 80%;
+  margin-left: 10%;
+  padding: 2%;
+  float:left;
+
+}
+.panel-group{
+  height: 40%;
+  width: 60%;
+  padding: 2%;
+  margin: auto;
+padding: 10px;
+
+
+}
+.panel panel-default col-md-7{
+    width: 100%;
+
+}
+.form-group button{
+  margin-top: 5%;
+  font-weight: bold;
+}
+
+.form-group label{
+  margin-top: 4%;
+}
+.min,.max{
+  width: 55px;
+  float: left;
+  margin-left: 15px;
+}
+.max{
+  margin-top:49px;
+  margin-left: 10px;
+
+}
+
+.min label{
+  margin-top: 45%;
+}
+
+
+.footer {
+  background-color: #FFF;
+	padding: 1% 1% 0% 1%;
+  font-size: 14px;
+}

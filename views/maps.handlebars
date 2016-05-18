@@ -1,0 +1,31 @@
+<!-- views/maps.handlebars -->
+{{#if user}}  
+  <div class="jumbotron">
+    <h1>Map</h1>
+</div>
+  <div id="pip-pano"></div>
+ <div id="map-canvas"></div>
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script src="markercluster.js"></script>
+  <script src="List.js"></script>
+  <script src="Mapster.js"></script>
+  <script src="mapoptions.js"></script>
+  <script src="jquery.mapster.js"></script>
+  <script src="script.js"></script>
+
+  {{else}}
+<div class="jumbotron">
+  <h1>Sign in</h1>
+  <p>Welcome to Bikebuddy</p>
+  <p>
+</div>
+<div class="col-md-offset-4">  
+    <a href="/auth/facebook/" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> Sign in with Facebook</a>
+  </p>
+</div>
+
+{{/if}}

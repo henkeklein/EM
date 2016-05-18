@@ -1,0 +1,67 @@
+<!-- views/home.handlebars -->
+
+<!--Om användaren är inloggad visas koden nedan-->
+{{#if user}}
+
+  <div class="jumbotron">
+    <h1>Add Event</h1>
+</div>
+
+
+
+<!--formulär-->
+<h1> Create the best bikeevent ever <img src="https://cdn1.iconfinder.com/data/icons/travel-line-icons-vol-3/48/096-512.png" alt="Bike icon" height="40" width="40"></h1>
+<div class="form-group">
+  <form method="POST" action="/topic" class="small-12 columns medium-6">
+      <div class="col-sm-12">
+        <label>Event name</label>
+        <input type="text" class="form-control" placeholder="Add a short, clear name" name="title"/>
+      </div>
+
+      <div class="col-sm-12">
+        <label>Image URL</label>
+        <input type="text" class="form-control" placeholder="Add an image URL" name="image"/>
+      </div>
+
+      <div class="col-sm-8">
+        <label> Pick a date</label>
+        <input type="text" class="form-control" name="datum" id="dp" onclick="$('#dp').datepicker();$('#dp').datepicker('show');" placeholder= "Choose Date">
+      </div>
+      <div class="col-sm-6">
+        <label>Start</label>
+        <input type="text" class="form-control" placeholder="Starting Address" name="start"/>
+      </div>
+      <div class="col-sm-6">
+        <label>Destination</label>
+        <input type="text" class="form-control" placeholder="Destination Address" name="end"/>
+      </div>
+
+      <div class="col-xs-12 col-sm-12">
+        <label>Description</label>
+        <textarea placeholder="Tell people more about the event" name="subject" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+		      <div class=" col-xs-offset-3 col-xs-6 col-sm-offset-4 col-sm-6">
+			         <button type="submit" value="Create new event" id="submit" class="btn btn-success">Submit</button>
+		      </div>
+      </div>
+
+  </form>
+</div>
+
+<script>
+document.getElementById("submit").onclick = function() {submitFunction()};
+function submitFunction() {
+    document.getElementById("submit");
+    alert("Event created");
+}
+</script>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/></link>
+<script src="">
+<!--Om användaren inte är inloggad visas denna-->
+{{else}}
+
+{{/if}}

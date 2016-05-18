@@ -1,0 +1,59 @@
+<!-- views/home.handlebars -->
+{{#if user}}
+  <div class="jumbotron">
+    <h1>Events</h1>
+    <p id="time"></p>
+  </div>
+  <div class="panel panel-default">
+  </div>
+
+<!--event-->
+
+{{# each title}}
+<section class="panel-group" >
+	<div class="panel panel-default col-md-7">
+<div id=""></div>
+      <p>
+        <a>{{this.[0].date}} {{this.[0].creator}}</a>
+       <img src = "{{this.[0].image}}" width="400" height="200"/>
+     </p>
+
+			<p><a href="/p/{{this.[0].key}}" role="button" class="btn btn-default">{{this.[0].title}} »</a>
+        <a href="/attend/{{this.[0].key}}" role="button" id="attend" class="btn btn-default">Attend »</a>
+        <a href="/unattend/{{this.[0].key}}" role="button" id="unattend" class="btn btn-default">Un Attend »</a>
+
+      </p>
+  </div><br>
+	<div class="panel panel-default col-md-7">
+</section>
+{{/each}}
+
+
+<script>
+document.getElementById("attend").onclick = function() {attendFunction()};
+function attendFunction() {
+    document.getElementById("attend");
+    alert("Attended");
+}
+document.getElementById("unattend").onclick = function() {unattendFunction()};
+function unattendFunction() {
+    document.getElementById("unattend");
+    alert("Unattended");
+}
+</script>
+
+
+
+
+{{else}}
+<div class="jumbotron">
+  <h1>Welcome to Bikebuddy</h1>
+  <h2>Sign in</h2>
+  <p>
+</div>
+<div class="col-md-offset-4">
+    <a href="/auth/facebook/" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> Sign in with Facebook</a>
+  </p>
+</div>
+
+{{/if}}

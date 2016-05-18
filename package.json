@@ -1,0 +1,31 @@
+{
+  "name": "em",
+  "version": "0.0.0",
+  "description": "userAuth\r ========",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^0.7.12",
+    "express": "^3.5.0",
+    "express3-handlebars": "^0.5.0",
+    "moment": "^2.13.0",
+    "orchestrate": "^0.8.0",
+    "passport": "^0.2.0",
+    "passport-facebook": "^1.0.3",
+    "passport-local": "^1.0.0",
+    "q": "^1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aqwes/BikeBuddy2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aqwes/BikeBuddy2/issues"
+  },
+  "homepage": "https://github.com/aqwes/BikeBuddy2#readme",
+  "devDependencies": {}
+}
