@@ -9,6 +9,7 @@ exports.getEvent = function(req, res) {
 
   db.newSearchBuilder()
   .collection('Event')
+  .sort('datum', 'asc')
   .query('*')
   .then(function (events){
         events.body.results.forEach(function(obj, i){

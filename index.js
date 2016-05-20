@@ -10,6 +10,7 @@ var config = require('./config.json'), //config file contains all tokens and oth
     funct = require('./functions.js');
     fbAuth = require('./fbAuth.json');
     events = require('./events.js');
+    games = require('./games.js');
     db = require('orchestrate')(config.db);
 
 var app = express();
@@ -134,6 +135,8 @@ app.get('/post', function(req, res){
   res.render('post', {user: req.user});
 });
 
+app.get('/postBet', games.getGames)
+
 
 //sends the request through our local signup strategy, and if successful takes user to homepage, otherwise returns then to signin page
 app.post('/local-reg', passport.authenticate('local-signup', {
@@ -151,6 +154,35 @@ app.post('/login', passport.authenticate('local-signin', {
 app.get('/', events.getEvent);
 
 app.post('/topic', function(req, res) {
+
+  var hometeam = req.param("hometeam"),
+      awayteam = req.param("awayteam"),
+      image = req.param("image"),
+      datum =req.param("datum"),
+      location= req.param("location"),
+      time = req.param("time"),
+      tv = req.param("tv")
+
+  db.post('Event', {
+    "hometeam" : hometeam,
+    "awayteam" : awayteam,
+    "image" : image,
+    "datum" : datum,
+    "location" : location,
+    "time": time,
+    "tv": tv,
+
+  })
+  .then(function (result) {
+    var responseKey = result.headers.location.split("/")[3];
+    res.redirect('/');
+  })
+  .fail(function (err) {
+
+  });
+});
+
+app.post('/bet', function(req, res) {
 
   var hometeam = req.param("hometeam"),
       awayteam = req.param("awayteam"),

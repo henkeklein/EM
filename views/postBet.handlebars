@@ -1,0 +1,57 @@
+<!-- views/home.handlebars -->
+
+<!--Om användaren är inloggad visas koden nedan-->
+{{#if user}}
+
+  <div class="jumbotron">
+    <h1>Add New Bet</h1>
+</div>
+
+
+
+<!--formulär-->
+<h1> Create new bet <img src="https://cdn1.iconfinder.com/data/icons/travel-line-icons-vol-3/48/096-512.png" alt="Bike icon" height="40" width="40"></h1>
+{{# each res}}
+<section class="panel-group" >
+  <form method="POST" action="/bet" class="small-12 columns medium-6">
+<p>Game {{this.[0].number}} : {{this.[0].gameName}}</p>
+      <div class="col-sm-6">
+      <label>Bet1</label>
+      <input type="text" class="form-control" placeholder="1" name="number1"/>
+    </div>
+<div class="col-sm-6">
+    <label>BetX</label>
+    <input type="text" class="form-control" placeholder="X" name="numberX"/>
+  </div>
+
+  <div class="col-sm-6">
+    <label>Bet2</label>
+    <input type="text" class="form-control" placeholder="2" name="number2"/>
+  </div>
+
+      <div class="form-group">
+		      <div class=" col-xs-offset-3 col-xs-6 col-sm-offset-4 col-sm-6">
+			         <button type="submit" value="Create new event" id="submit" class="btn btn-success">Submit</button>
+		      </div>
+      </div>
+  </form>
+
+</section>
+{{/each}}
+
+<script>
+document.getElementById("submit").onclick = function() {submitFunction()};
+function submitFunction() {
+    document.getElementById("submit");
+    alert("Event created");
+}
+</script>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/></link>
+<script src="">
+<!--Om användaren inte är inloggad visas denna-->
+{{else}}
+
+{{/if}}
