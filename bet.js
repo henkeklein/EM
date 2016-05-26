@@ -8,7 +8,7 @@ exports.getBet = function(req, res) {
   var results = [];
 
   db.newSearchBuilder()
-  .collection('Bet')
+  .collection('Bet', 'Games')
   .sort('user', 'asc')
   .query('*')
   .then(function (events){
@@ -16,11 +16,13 @@ exports.getBet = function(req, res) {
           var bet = events.body.results[i]["value"].bet;
           var result = events.body.results[i]["value"].result;
           var user = events.body.results[i]["value"].user;
+          var winner = events.body.results[i]["value"].winner;
 
           results[i] = ([{
             "bet":bet,
             "result":result,
             "user":user,
+            "winner":winner,
           }]);
             });
           res.render('infoBet', {user: req.user, res: results});

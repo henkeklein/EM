@@ -16,6 +16,10 @@ text-align: center;
 padding-bottom: 0%;
 }
 
+br1 {
+  margin:10em;
+  line-height:8em;
+}
 .wrapper {
 	background-color: #DEDEDE;
 }
@@ -81,6 +85,12 @@ background-color: #000;
 .text-group{
   height: 20px;
   width: 90px;
+  padding: 2%;
+  float: right;
+}
+.text-group1{
+  height: 20px;
+  width: 140px;
   padding: 2%;
   float: right;
 }

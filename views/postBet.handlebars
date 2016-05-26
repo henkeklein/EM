@@ -10,7 +10,7 @@
 
 
 <!--formulär-->
-<h1> Create new bet</h1>
+<h1> Create New Bet</h1>
 {{# each res}}
   <div class ="panel-group1">
 <p>Game {{this.[0].number}} : {{this.[0].gameName}}</p>
@@ -18,7 +18,7 @@
   <form method="POST" action="/bet" class="small-12 columns medium-6">
 
       <div class="form-control1">
-      <label>1 | X | 2</label>
+      <label>1 | X | 2 : </label>
       <input type="text" class="text-group" placeholder="1 | X | 2" name="bet"/>
     </div>
     <div class="form-control1">
@@ -26,8 +26,15 @@
     <input type="text" class="text-group" placeholder="0-0" name="result"/>
   </div>
   {{/each}}
+  <div class="form-control1">  <hr/>
+</div>
+  <div class="form-control1">
+  <label>Winner of EM 2016 : </label>
+  <input type="text" class="text-group1" placeholder="Team" name="winner"/>
+</div>
   <div class="form-group">
       <div class=" col-xs-offset-3 col-xs-6 col-sm-offset-4 col-sm-6">
+        <br1/>
            <button type="submit" value="Create new bet" id="submit" class="btn btn-success">Submit</button>
       </div>
   </div>

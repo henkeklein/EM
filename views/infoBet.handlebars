@@ -8,11 +8,20 @@
 
 
 {{# each res}}
-<section class="panel-group" >
-    <p>
+<section class="panel-group1" >
+
       <h1> {{this.[0].user}} </h1>
-    <label>Bets: {{this.[0].bet}}</label><br>
-    <label>Results: {{this.[0].result}}</label><br>
-    </p>
+      <div class="form-control1">
+    <p>Bets per game : {{this.[0].bet}}</p>
+  </div>
+  <div class="form-control1">
+    <p>Results per game : {{this.[0].result}}</p>
+  </div>
+  <div class="form-control1">
+    <p>Winner of EM 2016 : {{this.[0].winner}}</p>
+  </div>
+  <div class="form-control1">
+    <br1/>
+  </div>
 </section>
 {{/each}}

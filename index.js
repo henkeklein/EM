@@ -188,12 +188,14 @@ app.post('/bet', function(req, res) {
 
   var bet = req.param("bet"),
       result = req.param("result"),
-      user = fbName(req, res)
+      user = fbName(req, res),
+      winner = req.param("winner")
 
   db.post('Bet', {
     "bet" : bet,
     "result" : result,
     "user" : user,
+    "winner" : winner,
 
   })
   .then(function (result) {
