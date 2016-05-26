@@ -11,6 +11,7 @@ var config = require('./config.json'), //config file contains all tokens and oth
     fbAuth = require('./fbAuth.json');
     events = require('./events.js');
     games = require('./games.js');
+    bet = require('./bet.js');
     db = require('orchestrate')(config.db);
 
 var app = express();
@@ -134,6 +135,7 @@ app.get('/signin', function(req, res){
 app.get('/post', function(req, res){
   res.render('post', {user: req.user});
 });
+app.get('/infoBet', bet.getBet)
 
 app.get('/postBet', games.getGames)
 
@@ -184,22 +186,14 @@ app.post('/topic', function(req, res) {
 
 app.post('/bet', function(req, res) {
 
-  var hometeam = req.param("hometeam"),
-      awayteam = req.param("awayteam"),
-      image = req.param("image"),
-      datum =req.param("datum"),
-      location= req.param("location"),
-      time = req.param("time"),
-      tv = req.param("tv")
+  var bet = req.param("bet"),
+      result = req.param("result"),
+      user = fbName(req, res)
 
-  db.post('Event', {
-    "hometeam" : hometeam,
-    "awayteam" : awayteam,
-    "image" : image,
-    "datum" : datum,
-    "location" : location,
-    "time": time,
-    "tv": tv,
+  db.post('Bet', {
+    "bet" : bet,
+    "result" : result,
+    "user" : user,
 
   })
   .then(function (result) {

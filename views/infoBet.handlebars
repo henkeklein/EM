@@ -1,0 +1,18 @@
+
+  <div class="jumbotron">
+    <h1>Bettings</h1>
+    <p id="time"></p>
+  </div>
+  <div class="panel panel-default">
+  </div>
+
+
+{{# each res}}
+<section class="panel-group" >
+    <p>
+      <h1> {{this.[0].user}} </h1>
+    <label>Bets: {{this.[0].bet}}</label><br>
+    <label>Results: {{this.[0].result}}</label><br>
+    </p>
+</section>
+{{/each}}

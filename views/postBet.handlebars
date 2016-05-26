@@ -19,25 +19,27 @@
 
       <div class="form-control1">
       <label>1 | X | 2</label>
-      <input type="text" class="text-group" placeholder="1 | X | 2" name="number1"/>
+      <input type="text" class="text-group" placeholder="1 | X | 2" name="bet"/>
     </div>
     <div class="form-control1">
     <label>Result : </label>
-    <input type="text" class="text-group" placeholder="0-0" name="numberX"/>
+    <input type="text" class="text-group" placeholder="0-0" name="result"/>
+  </div>
+  {{/each}}
+  <div class="form-group">
+      <div class=" col-xs-offset-3 col-xs-6 col-sm-offset-4 col-sm-6">
+           <button type="submit" value="Create new bet" id="submit" class="btn btn-success">Submit</button>
+      </div>
   </div>
   </form>
-{{/each}}
-<div class="form-group">
-    <div class=" col-xs-offset-3 col-xs-6 col-sm-offset-4 col-sm-6">
-         <button type="submit" value="Create new event" id="submit" class="btn btn-success">Submit</button>
-    </div>
-</div>
+
+
 
 <script>
 document.getElementById("submit").onclick = function() {submitFunction()};
 function submitFunction() {
     document.getElementById("submit");
-    alert("Event created");
+    alert("Bet created");
 }
 </script>
 
