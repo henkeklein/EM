@@ -10,34 +10,28 @@
 
 
 <!--formulär-->
-<h1> Create new bet <img src="https://cdn1.iconfinder.com/data/icons/travel-line-icons-vol-3/48/096-512.png" alt="Bike icon" height="40" width="40"></h1>
+<h1> Create new bet</h1>
 {{# each res}}
-<section class="panel-group" >
-  <form method="POST" action="/bet" class="small-12 columns medium-6">
+  <div class ="panel-group">
 <p>Game {{this.[0].number}} : {{this.[0].gameName}}</p>
-      <div class="col-sm-6">
-      <label>Bet1</label>
-      <input type="text" class="form-control" placeholder="1" name="number1"/>
+</div>
+  <form method="POST" action="/bet" class="small-12 columns medium-6">
+
+      <div class="form-control1">
+      <label>1 | X | 2</label>
+      <input type="text" class="text-group" placeholder="1 | X | 2" name="number1"/>
     </div>
-<div class="col-sm-6">
-    <label>BetX</label>
-    <input type="text" class="form-control" placeholder="X" name="numberX"/>
+    <div class="form-control1">
+    <label>Result : </label>
+    <input type="text" class="text-group" placeholder="0-0" name="numberX"/>
   </div>
-
-  <div class="col-sm-6">
-    <label>Bet2</label>
-    <input type="text" class="form-control" placeholder="2" name="number2"/>
-  </div>
-
-      <div class="form-group">
-		      <div class=" col-xs-offset-3 col-xs-6 col-sm-offset-4 col-sm-6">
-			         <button type="submit" value="Create new event" id="submit" class="btn btn-success">Submit</button>
-		      </div>
-      </div>
   </form>
-
-</section>
 {{/each}}
+<div class="form-group">
+    <div class=" col-xs-offset-3 col-xs-6 col-sm-offset-4 col-sm-6">
+         <button type="submit" value="Create new event" id="submit" class="btn btn-success">Submit</button>
+    </div>
+</div>
 
 <script>
 document.getElementById("submit").onclick = function() {submitFunction()};
