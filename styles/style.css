@@ -64,6 +64,13 @@ background-color: #000;
 
 }
 .panel-group{
+   height: 40%;
+   width: 45%;
+   margin: auto;
+   padding: 10px;
+
+}
+.panel-group1{
   height: 20%;
   width: 80%;
   padding: 2%;
