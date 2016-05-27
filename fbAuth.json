@@ -1,5 +1,5 @@
 {
     "clientID":"560900900746450",
     "clientSecret":"fbdafda9cb2508bb9a42ed34a50643ef",
-    "callbackURL":"http://embetting.herokuapp.com/auth/facebook/callback"
+    "callbackURL":"https://embetting.herokuapp.com/auth/facebook/callback"
 }
